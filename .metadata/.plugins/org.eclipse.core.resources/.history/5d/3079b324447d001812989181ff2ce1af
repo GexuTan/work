@@ -1,0 +1,38 @@
+import java.awt.List;
+//import java.util.*;
+
+
+
+
+public class Solution {
+
+	public static double findMaxAverage(int[] nums, int k) {
+
+		int local = 0;
+		int global = 0;
+
+		for(int i=0;i<k;i++){
+			local=local+nums[i];
+		}
+		global=local;
+		
+		for (int i = 0; i < nums.length-k; i++) {
+			local = local+nums[i+k]-nums[i];
+			global = Math.max(global, local);
+		}
+		return (double)global/k;
+	}
+	
+
+
+	public static void main(String[] args) {
+		
+		double s= -18.96-75.82+9+2186.05+108+36.27+212+29+140.72+45.02+32.29+17.08+194.23+
+				14.16+25.13+129+75.6+195+45.09+10.76+421.61+282.71+129+121.52+6.9+30.04+145+57;
+		
+		System.out.println(s);
+		//System.out.println(s1);
+		//System.out.println(s2);
+		//System.out.println(s+s1+s2);
+	}
+}
